@@ -1,0 +1,29 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="All rights reserved"
+
+[[mods]]
+modId="pvradio"
+displayName="PV Radio"
+version="${version}"
+authors="shihyeon"
+description='''
+A walkie-talkie addon for Plasmo Voice.
+'''
+
+[[mixins]]
+config="pvradio.mixins.json"
+
+[[dependencies.pvradio]]
+modId="minecraft"
+type="required"
+versionRange="${minecraft_version_maven}"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.pvradio]]
+modId="plasmovoice"
+type="required"
+versionRange="[2.1.0,)"
+ordering="AFTER"
+side="BOTH"

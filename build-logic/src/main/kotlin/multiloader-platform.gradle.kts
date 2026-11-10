@@ -1,0 +1,47 @@
+plugins {
+    id("multiloader-base")
+    id("maven-publish")
+}
+
+java {
+    withSourcesJar()
+}
+
+tasks {
+    processResources {
+        val propertiesMap = mapOf(
+            "version" to version,
+            "minecraft_version" to BuildConfig.MINECRAFT_VERSION_RANGE
+                .replace("(?<=\\D)-".toRegex(), "."), // fabric snapshot test
+            "minecraft_version_maven" to BuildConfig.MINECRAFT_VERSION_MAVEN,
+            "minecraft_version_min" to BuildConfig.MINECRAFT_VERSION_MIN,
+            "fabric_loader_version" to BuildConfig.FABRIC_LOADER_VERSION,
+            "fabric_api_version" to BuildConfig.FABRIC_API_VERSION,
+            "neoforge_version" to BuildConfig.NEOFORGE_VERSION
+        )
+
+        inputs.properties(propertiesMap)
+
+        filesMatching(listOf("META-INF/neoforge.mods.toml", "fabric.mod.json", "paper-plugin.yml")) {
+            expand(propertiesMap)
+        }
+    }
+
+    jar {
+        duplicatesStrategy = DuplicatesStrategy.FAIL
+        from(rootDir.resolve("LICENSE"))
+        from(rootDir.resolve("README.md"))
+    }
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = project.group as String
+            artifactId = project.name as String
+            version = version
+
+            from(components["java"])
+        }
+    }
+}

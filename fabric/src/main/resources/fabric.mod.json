@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "pvradio",
+  "version": "${version}",
+  "name": "PV Radio",
+  "description": "A walkie-talkie addon for Plasmo Voice.",
+  "authors": [
+    "shihyeon"
+  ],
+  "license": "All rights reserved",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "dev.erudites.mods.pvradio.fabric.client.PvRadioClientFabricMod"
+    ],
+    "main": [
+      "dev.erudites.mods.pvradio.fabric.PvRadioFabricMod"
+    ]
+  },
+  "mixins": [
+    "pvradio.mixins.json"
+  ],
+  "depends": {
+    "java": ">=25",
+    "fabricloader": ">=${fabric_loader_version}",
+    "fabric-api": ">=${fabric_api_version}",
+    "minecraft": "${minecraft_version}",
+    "plasmovoice": ">=2.1.0"
+  }
+}
