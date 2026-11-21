@@ -33,6 +33,7 @@ dependencies {
 
     compileOnly("su.plo.voice.api:client:${BuildConfig.PLASMOVOICE_VERSION}")
     compileOnly("su.plo.voice.api:server:${BuildConfig.PLASMOVOICE_VERSION}")
+    runtimeOnly("maven.modrinth:plasmo-voice:fabric-${BuildConfig.MINECRAFT_VERSION}-${BuildConfig.PLASMOVOICE_VERSION}")
 }
 
 loom {

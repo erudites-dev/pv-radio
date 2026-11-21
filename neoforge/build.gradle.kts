@@ -22,6 +22,7 @@ dependencies {
 dependencies {
     compileOnly("su.plo.voice.api:client:${BuildConfig.PLASMOVOICE_VERSION}")
     compileOnly("su.plo.voice.api:server:${BuildConfig.PLASMOVOICE_VERSION}")
+    runtimeOnly("maven.modrinth:plasmo-voice:neoforge-${BuildConfig.MINECRAFT_VERSION}-${BuildConfig.PLASMOVOICE_VERSION}")
 }
 
 sourceSets {
