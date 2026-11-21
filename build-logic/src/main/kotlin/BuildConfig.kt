@@ -17,7 +17,7 @@ object BuildConfig {
     var MOD_VERSION: String = "0.2.0"
 
     val MOD_ID: String = "pvradio"
-    val MOD_NAME: String = "PV Radio"
+    val MOD_NAME: String = "Plasmo Voice Radio"
     val GROUP: String = "dev.erudites"
 
     val GITHUB_REPOSITORY: String = "erudites-dev/pv-radio"
