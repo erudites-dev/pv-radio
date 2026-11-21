@@ -8,4 +8,4 @@
 - Plasmo Voice 2.1.0+
 
 ### Changes (0.2.0)
-- Updated to Minecraft 26.2
+- Updated to Minecraft 26.2-26.3

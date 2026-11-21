@@ -2,12 +2,10 @@ package dev.erudites.mods.pvradio.client;
 
 import dev.erudites.mods.pvradio.PvRadioMod;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
-import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.resources.Identifier;
 
 final class RadioIcons {
 
-    private static final int TEXTURE_SIZE = 16;
     private static final Identifier MIC = plasmoVoice("microphone");
     private static final Identifier MIC_DISABLED = plasmoVoice("microphone_disabled");
     private static final Identifier SPEAKER = plasmoVoice("speaker");
@@ -30,20 +28,7 @@ final class RadioIcons {
         final int y,
         final int size
     ) {
-        graphics.blit(
-            RenderPipelines.GUI_TEXTURED,
-            icon,
-            x,
-            y,
-            0.0F,
-            0.0F,
-            size,
-            size,
-            TEXTURE_SIZE,
-            TEXTURE_SIZE,
-            TEXTURE_SIZE,
-            TEXTURE_SIZE
-        );
+        graphics.blit(icon, x, y, x + size, y + size, 0.0F, 1.0F, 0.0F, 1.0F);
     }
 
     private static Identifier plasmoVoice(final String name) {
