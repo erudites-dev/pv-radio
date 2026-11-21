@@ -38,7 +38,7 @@ public final class RadioClientService {
         this.hud.tick();
         Minecraft client = Minecraft.getInstance();
         while (this.openRadio.consumeClick()) {
-            if (client.screen != null) {
+            if (client.gui.screen() != null) {
                 continue;
             }
             if (this.networking.canSend(RequestRadioPayload.TYPE)) {
@@ -53,11 +53,11 @@ public final class RadioClientService {
     public void onState(final RadioStatePayload payload) {
         Minecraft client = Minecraft.getInstance();
         RadioState.update(payload);
-        if (client.screen instanceof RadioScreen screen) {
+        if (client.gui.screen() instanceof RadioScreen screen) {
             screen.refresh();
         } else if (RadioState.consumeOpenRequest()) {
             if (payload.available()) {
-                client.setScreen(new RadioListScreen(this.networking));
+                client.gui.setScreen(new RadioListScreen(this.networking));
             } else {
                 showUnavailable(client);
             }
@@ -73,6 +73,6 @@ public final class RadioClientService {
     }
 
     private static void showUnavailable(final Minecraft client) {
-        client.gui.setOverlayMessage(Component.translatable("message.pvradio.radio.unavailable"), false);
+        client.gui.hud.setOverlayMessage(Component.translatable("message.pvradio.radio.unavailable"), false);
     }
 }

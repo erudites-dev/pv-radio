@@ -3,18 +3,18 @@ import org.gradle.api.Project
 object BuildConfig {
     val JAVA_VERSION: Int = 25
 
-    val MINECRAFT_VERSION_RANGE: String = ">=26.1" // range: ">=26.1 <27.1"
+    val MINECRAFT_VERSION_RANGE: String = ">=26.2" // range: ">=26.1 <27.1"
     val MINECRAFT_PUBLISH_END_OVERRIDE: String? = null
-    val MINECRAFT_VERSION: String = "26.1.2"
-    val NEOFORGE_VERSION: String = "26.1.2.86"
+    val MINECRAFT_VERSION: String = "26.2"
+    val NEOFORGE_VERSION: String = "26.2.0.95"
     val FABRIC_LOADER_VERSION: String = "0.19.5"
-    val FABRIC_API_VERSION: String = "0.155.3+26.1.2"
-    val PAPER_VERSION: String = "26.1.2.build.+"
+    val FABRIC_API_VERSION: String = "0.161.0+26.2"
+    val PAPER_VERSION: String = "26.2.build.+"
 
     val PLASMOVOICE_VERSION: String = "2.1.17"
 
     // https://semver.org/
-    var MOD_VERSION: String = "0.1.0"
+    var MOD_VERSION: String = "0.2.0"
 
     val MOD_ID: String = "pvradio"
     val MOD_NAME: String = "PV Radio"

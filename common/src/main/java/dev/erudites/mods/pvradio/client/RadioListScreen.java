@@ -43,7 +43,7 @@ public final class RadioListScreen extends RadioScreen {
             }
             this.button(
                 Component.literal(">"),
-                _ -> this.minecraft.setScreen(new RadioDetailScreen(this.networking, this, radio.id())),
+                _ -> this.minecraft.gui.setScreen(new RadioDetailScreen(this.networking, this, radio.id())),
                 right - SMALL_BUTTON,
                 y,
                 SMALL_BUTTON
@@ -57,7 +57,7 @@ public final class RadioListScreen extends RadioScreen {
         int halfWidth = (CONTENT_WIDTH - GAP) / 2;
         this.button(
             Component.translatable("screen.pvradio.radio.create"),
-            _ -> this.minecraft.setScreen(new RadioCreateScreen(this.networking, this)),
+            _ -> this.minecraft.gui.setScreen(new RadioCreateScreen(this.networking, this)),
             this.left,
             bottomY,
             halfWidth

@@ -28,7 +28,7 @@ public abstract class TranslucentScreen extends Screen {
     @Override
     public void extractBackground(final GuiGraphicsExtractor graphics, final int mouseX, final int mouseY, final float a) {
         graphics.fill(0, 0, this.width, this.height, BACKGROUND);
-        this.minecraft.gui.extractDeferredSubtitles();
+        this.minecraft.gui.hud.extractDeferredSubtitles();
     }
 
     @Override

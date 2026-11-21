@@ -167,7 +167,7 @@ public final class RadioHud {
     }
 
     public void tick() {
-        if (this.grab != null && !(Minecraft.getInstance().screen instanceof ChatScreen)) {
+        if (this.grab != null && !(Minecraft.getInstance().gui.screen() instanceof ChatScreen)) {
             this.drop();
         }
     }

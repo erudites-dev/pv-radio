@@ -120,7 +120,7 @@ abstract class RadioScreen extends TranslucentScreen {
     }
 
     protected void returnToList() {
-        this.minecraft.setScreen(new RadioListScreen(this.networking));
+        this.minecraft.gui.setScreen(new RadioListScreen(this.networking));
     }
 
     protected int textY(final int rowY) {

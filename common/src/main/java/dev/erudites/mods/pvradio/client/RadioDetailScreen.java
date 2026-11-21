@@ -88,7 +88,7 @@ public final class RadioDetailScreen extends RadioScreen {
         int thirdWidth = (CONTENT_WIDTH - GAP * 2) / 3;
         this.button(
             Component.translatable("screen.pvradio.radio.add"),
-            _ -> this.minecraft.setScreen(new RadioAddScreen(this.networking, this, this.radioId)),
+            _ -> this.minecraft.gui.setScreen(new RadioAddScreen(this.networking, this, this.radioId)),
             this.left,
             bottomY,
             thirdWidth
@@ -122,7 +122,7 @@ public final class RadioDetailScreen extends RadioScreen {
 
     @Override
     public void onClose() {
-        this.minecraft.setScreen(this.parent);
+        this.minecraft.gui.setScreen(this.parent);
     }
 
     @Override
@@ -161,13 +161,13 @@ public final class RadioDetailScreen extends RadioScreen {
     }
 
     private void confirmLeave(final RadioStatePayload.RadioView radio) {
-        this.minecraft.setScreen(new ConfirmScreen(
+        this.minecraft.gui.setScreen(new ConfirmScreen(
             confirmed -> {
                 if (confirmed) {
                     this.networking.send(new RadioLeavePayload(this.radioId));
-                    this.minecraft.setScreen(this.parent);
+                    this.minecraft.gui.setScreen(this.parent);
                 } else if (this.radio().isPresent()) {
-                    this.minecraft.setScreen(this);
+                    this.minecraft.gui.setScreen(this);
                 } else {
                     this.returnToList();
                 }
