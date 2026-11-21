@@ -96,6 +96,8 @@ gradle.projectsEvaluated {
                 end = BuildConfig.MINECRAFT_PUBLISH_END
             }
             javaVersions.add(JavaVersion.toVersion(BuildConfig.JAVA_VERSION))
+            client = true
+            server = true
         }
 
         val mrOptions = modrinthOptions {
